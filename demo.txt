@@ -1,2 +1,86 @@
-public class demo{
+
+@Entity
+@Table(name = "student_Adress")
+public class Address {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "address-id")
+private int Aid;
+	@Column(length = 50,name = "STREETS")
+private String streets;
+	@Column(length = 100,name = "CITY")
+private String city;
+	@Column(name = "is-open")
+private boolean isopen;
+	
+private double x;
+	@Column(name = "added-date")
+private Date addedDate;
+	@Lob
+private byte[] image;
+public Address(int aid, String streets, String city, boolean isopen, double x, Date addedDate, byte[] image) {
+	super();
+	Aid = aid;
+	this.streets = streets;
+	this.city = city;
+	this.isopen = isopen;
+	this.x = x;
+	this.addedDate = addedDate;
+	this.image = image;
+}
+public Address() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+public int getAid() {
+	return Aid;
+}
+public void setAid(int aid) {
+	Aid = aid;
+}
+public String getStreets() {
+	return streets;
+}
+public void setStreets(String streets) {
+	this.streets = streets;
+}
+public String getCity() {
+	return city;
+}
+public void setCity(String city) {
+	this.city = city;
+}
+public boolean isIsopen() {
+	return isopen;
+}
+public void setIsopen(boolean isopen) {
+	this.isopen = isopen;
+}
+public double getX() {
+	return x;
+}
+public void setX(double x) {
+	this.x = x;
+}
+public Date getAddedDate() {
+	return addedDate;
+}
+public void setAddedDate(Date addedDate) {
+	this.addedDate = addedDate;
+}
+public byte[] getImage() {
+	return image;
+}
+public void setImage(byte[] image) {
+	this.image = image;
+}
+@Override
+public String toString() {
+	return "Address [Aid=" + Aid + ", streets=" + streets + ", city=" + city + ", isopen=" + isopen + ", x=" + x
+			+ ", addedDate=" + addedDate + ", image=" + Arrays.toString(image) + "]";
+}
+
+
+}
+
 }
